@@ -1,0 +1,445 @@
+@charset "UTF-8";
+/* Regular (400) */
+@font-face {
+  font-family: "WelcomeOTF";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../woff2/WelcomeOTF-Regular.woff2") format("woff2");
+}
+/* Bold (700) */
+@font-face {
+  font-family: "WelcomeOTF";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../woff2/WelcomeOTF-Bold.woff2") format("woff2");
+}
+/* =========================================
+   1. Variables & Functions (설정)
+   ========================================= */
+/* =========================================
+      2. Reset CSS (간결 버전)
+      ========================================= */
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+dl,
+dt,
+dd,
+li,
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+button {
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+body {
+  font-family: "WelcomeOTF", sans-serif;
+  line-height: 1.4;
+  font-weight: 400;
+  color: #000;
+  background-color: #f5f5f5;
+}
+
+img {
+  vertical-align: top;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
+
+/* =========================================
+      3. Scaling Logic (핵심 방법론)
+      ========================================= */
+html {
+  font-size: calc(100vw / 375 * 10);
+}
+
+@media (min-width: 600px) {
+  html {
+    font-size: calc(600px / 375 * 10);
+  }
+}
+/* =========================================
+      4. Layout & Design
+      ========================================= */
+.wrap {
+  width: 100%;
+  max-width: 600px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: #fff;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(50%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.header {
+  padding: 2rem 2rem 1.2rem;
+}
+.header .logo {
+  width: 7.4rem;
+  height: 2rem;
+}
+.header .logo a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.header .logo a img {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  padding: 3rem 2rem 4rem;
+}
+
+.visual-area {
+  text-align: center;
+}
+.visual-area .title-area .title-sub {
+  font-size: 3.6rem;
+  font-weight: 700;
+  line-height: 100%;
+}
+.visual-area .title-area .title-main {
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 140%;
+  color: #ea002c;
+}
+.visual-area .title-area .title-main .orange {
+  color: #ff7a00;
+}
+.visual-area .img-box img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.info-area {
+  padding: 1.2rem 0;
+}
+.info-area .benefit-list li {
+  display: flex;
+  align-items: center;
+  line-height: 160%;
+  font-size: 2rem;
+  color: #545454;
+}
+.info-area .benefit-list li .label {
+  font-weight: 700;
+  color: #ea002c;
+  margin-right: 0.7rem;
+}
+.info-area .benefit-list li .text strong {
+  color: #000;
+}
+.info-area .notice {
+  font-size: 1.2rem;
+  color: #767676;
+  opacity: 0.6;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* =========================================
+   Feature Area (특징 리스트)
+   ========================================= */
+.feature-area {
+  padding: 3rem 0 6rem;
+}
+.feature-area .feature-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+.feature-area .feature-list li:last-child {
+  margin-bottom: 0;
+}
+.feature-area .feature-list li .text-box .tit {
+  font-size: 2rem;
+  line-height: 120%;
+  color: #000;
+  font-weight: 400;
+}
+.feature-area .feature-list li .text-box .tit strong {
+  font-weight: 700;
+}
+.feature-area .feature-list li .text-box .tit .red {
+  color: #E10317;
+}
+.feature-area .feature-list li .text-box .desc {
+  font-size: 1.6rem;
+  color: #767676;
+  margin-top: 0.6rem;
+}
+.feature-area .feature-list li .img-box {
+  width: 10.2rem;
+  height: auto;
+  flex-shrink: 0;
+}
+.feature-area .feature-list li .img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* =========================================
+   Product Detail (상세 정보 회색박스)
+   ========================================= */
+.product-detail {
+  background: rgba(245, 239, 232, 0.4);
+  padding: 4rem 2rem;
+  margin: 0 -2rem;
+}
+.product-detail.white2 {
+  background: #F7F7F7;
+}
+.product-detail.white {
+  background: #fff;
+}
+.product-detail .detail-header {
+  font-size: 1.8rem;
+  line-height: 100%;
+  font-weight: 400;
+  color: #000;
+  display: flex;
+  align-items: center;
+  line-height: -2%;
+  gap: 0.8rem;
+}
+.product-detail .detail-header .ico-info {
+  display: block;
+  width: 1.8rem;
+  height: 1.8rem;
+  background: url(../images/ico-info.svg) no-repeat center center/contain;
+}
+.product-detail .detail-body {
+  padding: 3rem 0 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.product-detail .detail-body:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.product-detail .detail-body .prod-name {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 100%;
+  margin-bottom: 1.6rem;
+  color: #000;
+}
+.product-detail .detail-body .notice {
+  color: #545454;
+  line-height: 140%;
+  font-size: 1.5rem;
+}
+.product-detail .detail-body .alert-box {
+  color: #545454;
+  line-height: 180%;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  padding: 2rem 3.2rem;
+  border-radius: 1.2rem;
+  background: #F7F7F7;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.product-detail .detail-body .alert-box.v2 {
+  background: #fff;
+  padding: 2rem;
+}
+.product-detail .detail-body .alert-box.v2 .lh2 {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 140%;
+}
+.product-detail .detail-body .alert-box.v2 .lh2.mt-4 {
+  margin-top: 0.4rem;
+}
+.product-detail .detail-body .info-list.v2 {
+  margin-top: 2rem;
+}
+.product-detail .detail-body .info-list.v2 .item {
+  margin-bottom: 1.2rem;
+}
+.product-detail .detail-body .info-list .item {
+  margin-bottom: 1.6rem;
+  font-size: 1.5rem;
+  line-height: 140%;
+  padding-left: 1.2rem;
+  position: relative;
+  font-weight: 400;
+}
+.product-detail .detail-body .info-list .item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  background: #767676;
+  border-radius: 50%;
+}
+.product-detail .detail-body .info-list .item:last-child {
+  margin-bottom: 0;
+}
+.product-detail .detail-body .info-list .item dt {
+  font-weight: 400;
+  color: #767676;
+  margin-bottom: 0.4rem;
+  line-height: 100%;
+}
+.product-detail .detail-body .info-list .item dd {
+  font-weight: 400;
+  color: #9E9E9E;
+}
+.product-detail .detail-body .info-list .item dd .sub-txt {
+  display: block;
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+}
+.product-detail .detail-body .info-list .item dd .black {
+  color: #000;
+}
+.product-detail .text-box p {
+  font-size: 1.5rem;
+  line-height: 140%;
+  color: #9E9E9E;
+  margin-bottom: 1.2rem;
+}
+.product-detail .text-box p:last-child {
+  margin-bottom: 0;
+}
+
+.line {
+  background: #f7f7f7;
+  margin: 0 -2rem;
+  padding: 0 2rem;
+}
+.line span {
+  display: block;
+  background: rgba(0, 0, 0, 0.1);
+  height: 1px;
+  width: 100%;
+}
+
+/* =========================================
+   Footer (하단 사업자 정보)
+   ========================================= */
+.footer {
+  background-color: #F7F7F7;
+  padding: 4rem 2rem 16rem;
+  margin: 0 -2rem;
+  color: #888;
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+.footer .f-logo {
+  width: 14.7rem;
+  height: 2rem;
+  margin-bottom: 1rem;
+}
+.footer .f-logo img {
+  width: 100%;
+  object-fit: contain;
+}
+.footer .f-info {
+  font-style: normal;
+  margin-bottom: 2rem;
+  line-height: 140%;
+  font-size: 1.5rem;
+  color: #767676;
+}
+.footer .f-info .divider {
+  opacity: 0.6;
+  display: inline-block;
+  margin: 0 0.2rem;
+}
+.footer .f-copy {
+  font-size: 1.5rem;
+  line-height: 140%;
+  color: #767676;
+}
+
+.btn-area {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  z-index: 100;
+}
+.btn-area .btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin: 0 auto;
+  max-width: 33.5rem;
+}
+.btn-area .btn {
+  width: 100%;
+  height: 6.8rem;
+  border-radius: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s;
+}
+.btn-area .btn .sub {
+  font-size: 1.8rem;
+  font-weight: 400;
+  opacity: 0.7;
+}
+.btn-area .btn .main {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+.btn-area .btn.btn-red {
+  background-color: #E10317;
+}
+.btn-area .btn.btn-orange {
+  background-color: #FF7A00;
+}
