@@ -1,0 +1,482 @@
+/* Regular (400) */
+@font-face {
+  font-family: "WelcomeOTF";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/WelcomeOTF-Regular.woff2") format("woff2");
+}
+
+/* Bold (700) */
+@font-face {
+  font-family: "WelcomeOTF";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/WelcomeOTF-Bold.woff2") format("woff2");
+}
+
+/* =========================================
+   1. Variables & Functions (설정)
+   ========================================= */
+$base-width: 375; // 기준 디자인 너비 (px)
+$max-width: 600; // 최대 너비 (px)
+
+// PX를 REM으로 변환하는 함수 (시안 px값 그대로 입력)
+// 사용법: width: rem(375);
+@function rem($px) {
+  @return #{$px * 0.1}rem;
+}
+
+/* =========================================
+      2. Reset CSS (간결 버전)
+      ========================================= */
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+dl,
+dt,
+dd,
+li,
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+ul,
+li {
+  list-style: none;
+}
+button {
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+body {
+  font-family: "WelcomeOTF", sans-serif;
+  line-height: 1.4;
+  font-weight: 400;
+  color: #000;
+  background-color: #f5f5f5;
+}
+img{
+  vertical-align: top;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
+/* =========================================
+      3. Scaling Logic (핵심 방법론)
+      ========================================= */
+html {
+  // 375px 기준에서 1rem = 10px이 되도록 설정
+  // 100vw / 375 * 10 = 2.6666vw
+  font-size: calc(100vw / #{$base-width} * 10);
+}
+
+// 768px 이상일 때 크기 고정 (Media Query)
+@media (min-width: #{$max-width}px) {
+  html {
+    // 768px 기준의 폰트사이즈로 고정
+    font-size: calc(#{$max-width}px / #{$base-width} * 10);
+  }
+}
+
+/* =========================================
+      4. Layout & Design
+      ========================================= */
+.wrap {
+  width: 100%;
+  max-width: #{$max-width}px; // 최대 너비 제한
+  min-height: 100vh;
+  margin: 0 auto; // 중앙 정렬
+  background-color: #fff; // 실제 앱 배경색
+  position: relative;
+  overflow-x: hidden;
+  
+}
+
+// 여기서부터는 시안 px값 그대로 rem() 함수에 넣으면 됩니다.
+// 예: padding: 20px -> padding: rem(20);
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(50%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.header {
+  padding: rem(20) rem(20) rem(12);
+  .logo {
+    width: rem(74);
+    height: rem(20);
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.container {
+  padding: rem(30) rem(20) rem(40);
+}
+
+.visual-area {
+  text-align: center;
+  .title-area {
+    .title-sub {
+      font-size: rem(36);
+      font-weight: 700;
+      line-height: 100%;
+    }
+    .title-main {
+      font-size: rem(48);
+      font-weight: 700;
+      line-height: 140%;
+      color: #ea002c;
+      .orange {
+        color: #ff7a00;
+      }
+    }
+  }
+  .img-box {
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.info-area {
+  padding: rem(12) 0;
+  .benefit-list {
+    li {
+      display: flex;
+      align-items: center;
+      line-height: 160%;
+      font-size: rem(20);
+      color: #545454;
+      .label {
+        font-weight: 700;
+        color: #ea002c;
+        margin-right: rem(7);
+      }
+      .text {
+        strong {
+          color: #000;
+        }
+      }
+    }
+  }
+  .notice {
+    font-size: rem(12);
+    color: #767676;
+    opacity: 0.6;
+    margin-top: rem(10);
+    text-align: center;
+  }
+}
+/* =========================================
+   Feature Area (특징 리스트)
+   ========================================= */
+.feature-area {
+  padding: rem(30) 0 rem(60);
+  .feature-list {
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: rem(30); // 항목 간 간격
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .text-box {
+        .tit {
+          font-size: rem(20);
+          line-height: 120%;
+          color: #000;
+          font-weight: 400;
+          strong {
+            font-weight: 700;
+          }
+          .red {
+            color: #E10317;
+          }
+        }
+        .desc {
+          font-size: rem(16);
+          color: #767676;
+          margin-top: rem(6);
+        }
+      }
+
+      .img-box {
+        width: rem(102);
+        height: auto;
+        flex-shrink: 0;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}
+
+/* =========================================
+   Product Detail (상세 정보 회색박스)
+   ========================================= */
+.product-detail {
+  background: rgba(245, 239, 232, 0.4);
+  padding: rem(40) rem(20);
+  margin: 0 rem(-20);
+  &.white2{
+    background: #F7F7F7;
+  }
+  &.white{
+    background: #fff;
+  }
+  .detail-header {
+    font-size: rem(18);
+    line-height: 100%;
+    font-weight: 400;
+    color: #000;
+    display: flex;
+    align-items: center;
+    line-height: -2%;
+    gap: rem(8);
+    .ico-info {
+      display: block;
+      width: rem(18);
+      height: rem(18);
+      background: url(../images/ico-info.svg) no-repeat center center / contain;
+    }
+  }
+
+  .detail-body {
+    padding: rem(30) 0 rem(20);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    &:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+    .prod-name {
+      font-size: rem(18);
+      font-weight: 400;
+      line-height: 100%;
+      margin-bottom: rem(16);
+      color: #000;
+    }
+
+    .notice{
+      color: #545454;
+      line-height: 140%;
+      font-size: rem(15);
+    }
+
+    .alert-box{
+      color: #545454;
+      line-height: 180%;
+      font-size: rem(15);
+      margin-top: rem(20);
+      padding: rem(20) rem(32);
+      border-radius: rem(12);
+      background: #F7F7F7;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      &.v2{
+        background: #fff;
+        padding: rem(20);
+        .lh2{
+          display: inline-block;
+          vertical-align: top;
+          line-height: 140%;
+          &.mt-4{
+            margin-top: rem(4);
+          }
+        }
+      }
+    }
+
+    .info-list {
+      &.v2{
+        margin-top: rem(20);
+        .item{
+          margin-bottom: rem(12);
+        }
+      }
+      .item {
+        margin-bottom: rem(16);
+        font-size: rem(15);
+        line-height: 140%;
+        padding-left: rem(12);
+        position: relative;
+        font-weight: 400;
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: rem(7);
+          width: rem(4);
+          height: rem(4);
+          background: #767676;
+          border-radius: 50%;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        dt {
+          font-weight: 400;
+          color: #767676;
+          margin-bottom: rem(4);
+          line-height: 100%;
+        }
+        dd {
+          font-weight: 400;
+          color: #9E9E9E;
+          .sub-txt {
+            display: block;
+            font-size: rem(14);
+            margin-top: rem(5);
+          }
+          .black{
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+  .text-box{
+    p{
+      font-size: rem(15);
+      line-height: 140%;
+      color: #9E9E9E;
+      margin-bottom: rem(12);
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.line{
+  background: #f7f7f7;
+  margin: 0 rem(-20);
+  padding: 0 rem(20);
+  span{
+    display: block;
+    background: rgba(0, 0, 0, 0.1);
+    height: 1px;
+    width: 100%;
+  }
+}
+/* =========================================
+   Footer (하단 사업자 정보)
+   ========================================= */
+.footer {
+  background-color: #F7F7F7; // 더 진한 회색
+  padding: rem(40) rem(20) rem(160);
+  margin: 0 rem(-20);
+  color: #888;
+  font-size: rem(13);
+  line-height: 1.5;
+
+  .f-logo {
+    width: rem(147);
+    height: rem(20);
+    margin-bottom: rem(10);
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .f-info {
+    font-style: normal;
+    margin-bottom: rem(20);
+    line-height: 140%;
+    font-size: rem(15);
+    color: #767676;
+    .divider {
+      opacity: .6;
+      display: inline-block;
+      margin: 0 rem(2);
+    }
+  }
+
+  .f-copy {
+    font-size: rem(15);
+    line-height: 140%;
+    color: #767676;;
+  }
+}
+
+.btn-area {
+  
+  position: fixed;
+  bottom: rem(20);
+  left: rem(20);
+  right: rem(20);
+  z-index: 100;
+  .btn-group{
+    display: flex;
+    flex-direction: column;
+    gap: rem(12);
+    margin: 0 auto;
+    max-width: rem(335);
+  }
+  .btn {
+    width: 100%;
+    height: rem(68);
+    border-radius: rem(100); // 둥근 버튼
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s;
+
+    .sub {
+      font-size: rem(18);
+      font-weight: 400;
+      opacity: .7;
+    }
+    .main {
+      font-size: rem(24);
+      font-weight: 700;
+    }
+
+    &.btn-red {
+      background-color: #E10317;
+    }
+    &.btn-orange {
+      background-color: #FF7A00;
+    }
+  }
+}
