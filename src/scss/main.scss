@@ -142,19 +142,19 @@ html {
 }
 
 .container {
-  padding: rem(30) rem(20) rem(40);
+  padding: rem(30) rem(20) 0;
 }
 
 .visual-area {
   text-align: center;
   .title-area {
     .title-sub {
-      font-size: rem(36);
+      font-size: rem(30);
       font-weight: 700;
       line-height: 100%;
     }
     .title-main {
-      font-size: rem(48);
+      font-size: rem(40);
       font-weight: 700;
       line-height: 140%;
       color: #ea002c;
@@ -177,8 +177,8 @@ html {
     li {
       display: flex;
       align-items: center;
-      line-height: 160%;
-      font-size: rem(20);
+      line-height: 150%;
+      font-size: rem(18);
       color: #545454;
       .label {
         font-weight: 700;
@@ -204,7 +204,7 @@ html {
    Feature Area (특징 리스트)
    ========================================= */
 .feature-area {
-  padding: rem(30) 0 rem(60);
+  padding: rem(190) 0 rem(50);
   .feature-list {
     li {
       display: flex;
@@ -216,7 +216,7 @@ html {
       }
       .text-box {
         .tit {
-          font-size: rem(20);
+          font-size: rem(18);
           line-height: 120%;
           color: #000;
           font-weight: 400;
@@ -228,7 +228,7 @@ html {
           }
         }
         .desc {
-          font-size: rem(16);
+          font-size: rem(15);
           color: #767676;
           margin-top: rem(6);
         }
@@ -336,11 +336,16 @@ html {
         padding-left: rem(12);
         position: relative;
         font-weight: 400;
+        &:has(.none){
+          &::before{
+            top: rem(7);
+          }
+        }
         &::before {
           content: '';
           position: absolute;
           left: 0;
-          top: rem(7);
+          top: rem(4);
           width: rem(4);
           height: rem(4);
           background: #767676;
@@ -361,7 +366,7 @@ html {
           color: #9E9E9E;
           .sub-txt {
             display: block;
-            font-size: rem(14);
+            //font-size: rem(14);
             margin-top: rem(5);
           }
           .black{
@@ -439,10 +444,15 @@ html {
 .btn-area {
   
   position: fixed;
-  bottom: rem(20);
+  bottom: rem(130);
   left: rem(20);
   right: rem(20);
   z-index: 100;
+  transition: all 0.3s ease;
+  &.sticky {
+    position: fixed;
+    bottom: rem(20) // 바닥에 붙음
+  }
   .btn-group{
     display: flex;
     flex-direction: column;
@@ -452,7 +462,7 @@ html {
   }
   .btn {
     width: 100%;
-    height: rem(68);
+    height: rem(63);
     border-radius: rem(100); // 둥근 버튼
     display: flex;
     flex-direction: column;
@@ -461,14 +471,14 @@ html {
     color: #fff;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
     transition: transform 0.1s;
-
+    
     .sub {
-      font-size: rem(18);
+      font-size: rem(15);
       font-weight: 400;
       opacity: .7;
     }
     .main {
-      font-size: rem(24);
+      font-size: rem(22);
       font-weight: 700;
     }
 
