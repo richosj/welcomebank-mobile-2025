@@ -97,7 +97,6 @@ html {
   margin: 0 auto;
   background-color: #fff;
   position: relative;
-  overflow-x: hidden;
 }
 
 .sr-only {
@@ -186,7 +185,7 @@ html {
    Feature Area (특징 리스트)
    ========================================= */
 .feature-area {
-  padding: 6rem 0 5rem;
+  padding: 18rem 0 5rem;
 }
 .feature-area .feature-list li {
   display: flex;
@@ -404,11 +403,17 @@ html {
   color: #767676;
 }
 
+.container {
+  position: relative;
+}
+
 .btn-area {
   z-index: 100;
   transition: all 0.3s ease;
-  position: relative;
-  bottom: 0rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 44rem;
 }
 .btn-area .btn-group {
   display: flex;

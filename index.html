@@ -548,30 +548,7 @@
 		</main>
 	</div>
 
-	<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const btnArea = document.querySelector('.btn-area');
-
-    // 현재 HTML의 폰트사이즈(1rem에 해당하는 px값)를 가져오는 함수
-    const getRemValue = () => {
-        return parseFloat(getComputedStyle(document.documentElement).fontSize);
-    };
-
-    const onScroll = () => {
-        // 기준점 설정 (예: 30rem = 시안 기준 300px)
-        // 화면 크기가 줄어들면 이 기준점도 알아서 같이 줄어듦
-        const triggerPoint = 50 * getRemValue(); 
-
-        if (window.scrollY > triggerPoint) {
-            btnArea.classList.add('sticky');
-        } else {
-            btnArea.classList.remove('sticky');
-        }
-    };
-
-    window.addEventListener('scroll', onScroll);
-});
-	</script>
+	
 </body>
 
 </html>
