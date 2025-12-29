@@ -106,8 +106,6 @@ html {
   margin: 0 auto; // 중앙 정렬
   background-color: #fff; // 실제 앱 배경색
   position: relative;
-  overflow-x: hidden;
-  
 }
 
 // 여기서부터는 시안 px값 그대로 rem() 함수에 넣으면 됩니다.
@@ -204,7 +202,7 @@ html {
    Feature Area (특징 리스트)
    ========================================= */
 .feature-area {
-  padding: rem(190) 0 rem(50);
+  padding: rem(180) 0 rem(50);
   .feature-list {
     li {
       display: flex;
@@ -274,7 +272,7 @@ html {
       display: block;
       width: rem(18);
       height: rem(18);
-      background: url(../images/ico-info.svg) no-repeat center center / contain;
+      background: url(/images/ico-info.svg) no-repeat center center / contain;
     }
   }
 
@@ -330,7 +328,7 @@ html {
         }
       }
       .item {
-        margin-bottom: rem(16);
+        margin-bottom: rem(19);
         font-size: rem(15);
         line-height: 140%;
         padding-left: rem(12);
@@ -405,7 +403,7 @@ html {
    ========================================= */
 .footer {
   background-color: #F7F7F7; // 더 진한 회색
-  padding: rem(40) rem(20) rem(160);
+  padding: rem(40) rem(20) rem(300);
   margin: 0 rem(-20);
   color: #888;
   font-size: rem(13);
@@ -440,19 +438,20 @@ html {
     color: #767676;;
   }
 }
-
+.container{
+  position: relative;
+}
 .btn-area {
-  
-  position: fixed;
-  bottom: rem(130);
-  left: rem(20);
-  right: rem(20);
   z-index: 100;
   transition: all 0.3s ease;
-  &.sticky {
-    position: fixed;
-    bottom: rem(20) // 바닥에 붙음
-  }
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: rem(500);
+  // //top: calc(100dvh - rem(280));
+  // &.sticky {
+  //   position: fixed;
+  // }
   .btn-group{
     display: flex;
     flex-direction: column;
