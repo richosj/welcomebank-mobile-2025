@@ -410,7 +410,7 @@ html {
 .btn-area {
   z-index: 100;
   transition: all 0.3s ease;
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   top: 44rem;
