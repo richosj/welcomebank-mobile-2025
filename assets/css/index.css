@@ -410,12 +410,6 @@ html {
   position: relative;
   bottom: 0rem;
 }
-.btn-area.sticky {
-  position: fixed;
-  bottom: 2rem;
-  left: 2rem;
-  right: 2rem;
-}
 .btn-area .btn-group {
   display: flex;
   flex-direction: column;
