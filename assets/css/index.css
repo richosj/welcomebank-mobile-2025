@@ -186,7 +186,7 @@ html {
    Feature Area (특징 리스트)
    ========================================= */
 .feature-area {
-  padding: 19rem 0 5rem;
+  padding: 6rem 0 5rem;
 }
 .feature-area .feature-list li {
   display: flex;
@@ -304,7 +304,7 @@ html {
   margin-bottom: 1.2rem;
 }
 .product-detail .detail-body .info-list .item {
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.9rem;
   font-size: 1.5rem;
   line-height: 140%;
   padding-left: 1.2rem;
@@ -405,16 +405,16 @@ html {
 }
 
 .btn-area {
-  position: fixed;
-  bottom: 13rem;
-  left: 2rem;
-  right: 2rem;
   z-index: 100;
   transition: all 0.3s ease;
+  position: relative;
+  bottom: 0rem;
 }
 .btn-area.sticky {
   position: fixed;
   bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
 }
 .btn-area .btn-group {
   display: flex;
